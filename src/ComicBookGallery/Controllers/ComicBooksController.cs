@@ -6,8 +6,23 @@ using System.Web.Mvc;
 
 namespace ComicBookGallery.Controllers
 {
-    public class ComicBooksController: Controller
+    public class ComicBooksController : Controller
     {
+        public ActionResult Detail()
+        {
+            if(DateTime.Today.DayOfWeek == DayOfWeek.Monday)
+            {
+                return Redirect("/");
+                //return new RedirectResult("/");
+            }
+
+            return Content("Hello from the comics book controller!");
+            //return new ContentResult()
+            //{
+            //    Content = "Hello from the comics book controller!"
+            //};
+
+        }
 
     }
 }
